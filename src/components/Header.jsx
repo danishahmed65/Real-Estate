@@ -38,7 +38,8 @@ const Header = () => {
           setTimeout(type, 60);
         } else {
           isDeletingRef.current = false;
-          phraseIndexRef.current = (phraseIndexRef.current + 1) % phrases.length;
+          phraseIndexRef.current =
+            (phraseIndexRef.current + 1) % phrases.length;
           setTimeout(type, 200);
         }
       }
@@ -178,6 +179,8 @@ const Header = () => {
           }
         }
       `}</style>
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden bg-transparent">
+      </div>
     </div>
   );
 };
