@@ -79,7 +79,7 @@ const Header = () => {
     <div
       className="min-h-screen bg-cover bg-center flex flex-col items-center w-full overflow-hidden relative"
       style={{ backgroundImage: "url('/header_img.png')" }}
-      id="Header"
+      id="home"
       onMouseMove={handleMouseMove}
     >
       <Navbar />
