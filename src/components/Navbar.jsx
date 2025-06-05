@@ -8,7 +8,7 @@ const Navbar = () => {
   // Scroll listener to toggle background blur
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // blur when scroll more than 50px
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <div
       data-aos="fade-top"
-      className={`fixed top-3 rounded-full left-0git w-full z-50 transition-all duration-500 ${
+      className={`fixed top-3 rounded-full left-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? "bg-purple-900/70 backdrop-blur-md shadow-lg"
           : "bg-transparent"
@@ -38,7 +38,7 @@ const Navbar = () => {
           <img src={assets.logo} alt="logo" className="w-15 h-15" />
         </div>
 
-        {/* Nav Links */}
+        {/* ✅ Fixed Nav Links */}
         <ul className="hidden md:flex gap-6 text-white font-medium text-base font-zen">
           {["Home", "About", "Projects", "Testimonials"].map((item, index) => (
             <li key={index}>
@@ -71,6 +71,8 @@ const Navbar = () => {
           </svg>
           Sign in with Google
         </button>
+
+        {/* Mobile Menu Icon */}
         <img
           onClick={() => setShowMobileMenu(true)}
           src={assets.menu_icon}
@@ -100,30 +102,27 @@ const Navbar = () => {
               />
             </div>
 
-           <ul className="flex flex-col items-center gap-6 mt-10 text-white font-medium text-lg w-full">
-  {["Home", "About", "Projects", "Testimonials"].map((item) => (
-    <a
-      key={item}
-      onClick={() => setShowMobileMenu(false)}
-      href={`#${item.toLowerCase()}`}
-      className="block w-full text-center hover:text-purple-300"
-    >
-      {item}
-    </a>
-  ))}
-</ul>
+            <ul className="flex flex-col items-center gap-6 mt-10 text-white font-medium text-lg w-full">
+              {["Home", "About", "Projects", "Testimonials"].map((item) => (
+                <a
+                  key={item}
+                  onClick={() => setShowMobileMenu(false)}
+                  href={`#${item.toLowerCase()}`}
+                  className="block w-full text-center hover:text-purple-300"
+                >
+                  {item}
+                </a>
+              ))}
+            </ul>
 
-<div className="flex justify-center mt-6 w-full">
-  <button
-    type="button"
-    className="flex items-center gap-2 justify-center bg-white hover:bg-purple-700 hover:text-white border border-purple-600 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2 transition duration-300 mx-auto"
-  >
-    {/* svg icon */}
-    Sign in with Google
-  </button>
-</div>
-
-
+            <div className="flex justify-center mt-6 w-full">
+              <button
+                type="button"
+                className="flex items-center gap-2 justify-center bg-white hover:bg-purple-700 hover:text-white border border-purple-600 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2 transition duration-300 mx-auto"
+              >
+                Sign in with Google
+              </button>
+            </div>
           </div>
         </>
       )}
