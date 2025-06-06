@@ -10,13 +10,13 @@ const About = () => {
       <div className="max-w-6xl w-full flex flex-col lg:flex-row gap-14 items-start justify-between">
         {/* Left Side - Text */}
         <div className="flex flex-col items-start w-full lg:w-1/2 text-left">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h1 data-aos="zoom-in" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             About{" "}
             <span className="underline underline-offset-4 decoration-purple-500 font-light">
               Our Brand
             </span>
           </h1>
-          <p className="text-gray-600 mb-8 max-w-xl leading-relaxed">
+          <p data-aos="zoom-in-right" className="text-gray-600 mb-8 max-w-xl leading-relaxed">
             We are a forward-thinking real estate brand committed to helping
             individuals and families find properties that truly fit their
             lifestyle. Whether you're buying your dream home or selling with
@@ -25,7 +25,7 @@ const About = () => {
             reliable.
           </p>
 
-          <div className="grid grid-cols-2 gap-6 w-full mb-8">
+          <div data-aos="flip-left" className="grid grid-cols-2 gap-6 w-full mb-8">
             {[
               { label: "Years of Experience", value: "10+" },
               { label: "Projects Completed", value: "12+" },
@@ -41,7 +41,7 @@ const About = () => {
             ))}
           </div>
 
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full transition duration-300">
+          <button data-aos="zoom-out-down" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full transition duration-300">
             Learn More
           </button>
         </div>

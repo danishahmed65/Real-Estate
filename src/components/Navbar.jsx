@@ -32,14 +32,16 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1300px] mx-auto flex justify-between items-center py-4 px-6 md:px-12">
+      <div data-aos="fade-left" className="max-w-[1300px] mx-auto flex justify-between items-center py-4 px-6 md:px-12">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div data-aos="fade-down-right"
+          className="flex items-center gap-2">
           <img src={assets.logo} alt="logo" className="w-15 h-15" />
         </div>
 
         {/* Nav Links */}
-        <ul className="hidden md:flex gap-6 text-white font-medium text-base font-zen">
+        <ul data-aos="zoom-out-up"
+               className="hidden md:flex gap-6 text-white font-medium text-base font-zen">
           {["Home", "About", "Projects", "Testimonials"].map((item, index) => (
             <li key={index}>
               <a
@@ -54,6 +56,7 @@ const Navbar = () => {
 
         {/* Google Button */}
         <button
+          data-aos="zoom-out-down"
           type="button"
           className="hidden md:flex items-center gap-2 text-purple-600 hover:text-white border border-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 transition duration-300"
         >

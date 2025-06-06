@@ -85,7 +85,7 @@ const Header = () => {
       <Navbar />
 
       <div className="container text-center mx-auto py-8 px-4 sm:px-10 md:px-20 lg:px-32 text-white flex-grow flex flex-col justify-center">
-        <h2 className="text-4xl sm:text-6xl font-extrabold leading-tight mb-10 mt-12 tracking-wide">
+        <h2 data-aos="fade-down" className="text-4xl sm:text-6xl font-extrabold leading-tight mb-10 mt-12 tracking-wide">
           Explore Homes that
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
@@ -97,12 +97,14 @@ const Header = () => {
         {/* Buttons Responsive */}
         <div className="flex justify-center gap-4 flex-wrap">
           <a
+            data-aos="flip-up"
             href="#projects"
             className="relative px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full shadow-lg text-white font-semibold uppercase tracking-wide transition duration-300 hover:scale-105 hover:shadow-xl"
           >
             Projects
           </a>
-          <a
+          <a 
+            data-aos="flip-up"
             href="#contact"
             className="relative px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base border-2 border-white rounded-full text-white font-semibold uppercase tracking-wide transition duration-300 hover:bg-white hover:text-indigo-700 hover:scale-105 hover:shadow-lg"
           >
