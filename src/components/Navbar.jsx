@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 
+
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -41,8 +42,8 @@ const Navbar = () => {
 
         {/* Nav Links */}
         <ul data-aos="zoom-out-up"
-               className="hidden md:flex gap-6 text-white font-medium text-base font-zen">
-          {["Home", "About", "Projects", "Testimonials"].map((item, index) => (
+               className="hidden md:flex gap-3 text-white font-medium text-base font-zen">
+          {["Home", "About", "Projects", "Testimonials","Contact Us"].map((item, index) => (
             <li key={index}>
               <a
                 href={`#${item.toLowerCase()}`}
@@ -106,7 +107,7 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <ul className="flex flex-col items-center gap-5 mt-4 text-white font-medium text-lg">
-        {["Home","About", "Projects", "Testimonials"].map((item) => (
+        {["Home","About", "Projects", "Testimonials", "Contact Us"].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}

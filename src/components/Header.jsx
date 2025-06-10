@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 
 const Header = () => {
-  const phrases = [
+  const phrases = React.useMemo(() => [
     "Fit Your Dream",
     "Match Your Style",
     "Find Your Space",
     "Love Your Home",
-  ];
+  ], []);
 
   const [displayedText, setDisplayedText] = useState("");
   const [sparkles, setSparkles] = useState([]);
@@ -48,7 +48,7 @@ const Header = () => {
     // 🔁 Start loop
     const timeout = setTimeout(type, 500);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [phrases]);
 
   // 🌐 Update screen width for responsive checks
   useEffect(() => {
@@ -97,14 +97,12 @@ const Header = () => {
         {/* Buttons Responsive */}
         <div className="flex justify-center gap-4 flex-wrap">
           <a
-            data-aos="flip-up"
             href="#projects"
             className="relative px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full shadow-lg text-white font-semibold uppercase tracking-wide transition duration-300 hover:scale-105 hover:shadow-xl"
           >
             Projects
           </a>
           <a 
-            data-aos="flip-up"
             href="#contact"
             className="relative px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base border-2 border-white rounded-full text-white font-semibold uppercase tracking-wide transition duration-300 hover:bg-white hover:text-indigo-700 hover:scale-105 hover:shadow-lg"
           >
