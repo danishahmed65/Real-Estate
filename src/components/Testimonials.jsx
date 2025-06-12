@@ -9,8 +9,8 @@ const Testimonials = () => {
       className="scroll-section w-full px-6 md:px-16 py-20 bg-gradient-to-br from-purple-900 via-black to-purple-900 text-white"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r text-gray-300">
-          Customer <span className="underline decoration-purple-400 font-light text-gray-300">Testimonials</span>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r text-gray-100">
+          Customer <span className="underline decoration-purple-400 font-light text-gray-100">Testimonials</span>
         </h1>
         <p className="text-gray-300 mb-16 max-w-xl mx-auto text-base md:text-lg">
           Real stories from those who found a home with us.
