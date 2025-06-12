@@ -1,6 +1,5 @@
 import React from 'react'
 import {assets, testimonialsData} from '../assets/assets'
-import { img } from 'framer-motion/client'
 
 const Testimonials = () => {
   return (
