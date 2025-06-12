@@ -4,56 +4,56 @@ import { FaHome } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <div
-      className="container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 bg-gradient-to-br from-white via-purple-800 to-white"
-      data-aos="fade-up"
+    <section
       id="projects"
+      data-aos="fade-up"
+      className="w-full px-6 md:px-16 py-20 bg-gradient-to-br from-black via-purple-900 to-black text-white"
     >
-      <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
-        Projects{" "}
-        <span className="underline underline-offset-4 decoration-purple-800 font-light">
-          Completed
-        </span>
-      </h1>
-      <p className="text-center mb-8 max-w-[300px] mx-auto">
-        Crafting Spaces, Buildings, Legacies — Explore Our Portfolio
-      </p>
+      <div className="max-w-7xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-white">
+          Projects{" "}
+          <span className="underline decoration-purple-400 font-light">
+            Completed
+          </span>
+        </h1>
+        <p className="text-gray-300 mb-16 max-w-md mx-auto text-base md:text-lg">
+          Crafting Spaces, Buildings, Legacies — Explore Our Portfolio
+        </p>
 
-      {/* Cards Container */}
-      <div className="flex flex-wrap justify-center gap-8">
-        {projectsData.map((project, index) => (
-          <div
-            key={index}
-            className="w-full sm:w-[300px] bg-white bg-opacity-10 backdrop-blur-md shadow-lg rounded-xl overflow-hidden relative transform transition-transform duration-300 hover:-translate-y-3 cursor-pointer"
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-60 object-cover rounded-t-xl"
-            />
-
-            {/* Card Info */}
-            <div className="p-4 bg-white bg-opacity-80 backdrop-blur-md">
-              <h2 className="text-lg font-semibold text-gray-800">
-                {project.title}
-              </h2>
-              <p className="text-sm text-gray-600">
-                {project.price} <span className="mx-1">|</span> {project.location}
-              </p>
-            </div>
-
-            {/* Home Icon as Link */}
-            <a
-              href={`/project/${project.id}`}
-              className="absolute bottom-3 right-3 bg-white p-2 rounded-full shadow-md hover:bg-purple-600 hover:text-white transition flex items-center justify-center"
-              aria-label={`View details of ${project.title}`}
+        {/* Cards Grid */}
+        <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {projectsData.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2"
             >
-              <FaHome />
-            </a>
-          </div>
-        ))}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-56 object-cover"
+              />
+
+              <div className="p-5 bg-white/10 backdrop-blur-sm text-left">
+                <h2 className="text-xl font-semibold text-white mb-1">
+                  {project.title}
+                </h2>
+                <p className="text-sm text-purple-200">
+                  {project.price} <span className="mx-2">•</span> {project.location}
+                </p>
+              </div>
+
+              <a
+                href={`/project/${project.id}`}
+                className="absolute bottom-4 right-4 bg-white text-purple-700 p-2 rounded-full shadow-md hover:bg-purple-600 hover:text-white transition"
+                aria-label={`View details of ${project.title}`}
+              >
+                <FaHome />
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
