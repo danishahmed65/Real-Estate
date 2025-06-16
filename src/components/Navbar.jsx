@@ -5,17 +5,24 @@ const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const navItems = [
+    { label: "Home", id: "home" },
+    { label: "About", id: "about" },
+    { label: "Projects", id: "projects" },
+    { label: "Testimonials", id: "testimonials" },
+    { label: "Contact Us", id: "contact" },
+  ];
+
   // Scroll listener to toggle background blur
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // blur when scroll more than 50px
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Control body scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = showMobileMenu ? "hidden" : "auto";
     return () => {
@@ -26,43 +33,34 @@ const Navbar = () => {
   return (
     <div
       data-aos="fade-top"
-      className={`fixed top-5 rounded-full left-0git w-full z-50 transition-all duration-500 ${
+      className={`fixed top-5 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? "bg-purple-900/70 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
-      <div
-        data-aos="fade-left"
-        className="max-w-[1300px] mx-auto flex justify-between items-center py-4 px-6 md:px-12"
-      >
+      <div className="max-w-[1300px] mx-auto flex justify-between items-center py-4 px-6 md:px-12">
         {/* Logo */}
-        <div data-aos="fade-down-right" className="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <img src={assets.logo} alt="logo" className="w-15 h-15" />
         </div>
 
-        {/* Nav Links */}
-        <ul
-          data-aos="zoom-out-up"
-          className="hidden md:flex gap-3 text-white font-medium text-base font-zen"
-        >
-          {["Home", "About", "Projects", "Testimonials", "Contact Us"].map(
-            (item, index) => (
-              <li key={index}>
-                <a
-                  href={`#${item.toLowerCase()}`}
-                  className="cursor-pointer text-white px-4 py-2 rounded-full transition duration-300 ease-in-out hover:bg-purple-500 hover:text-black hover:shadow-lg hover:shadow-purple-300"
-                >
-                  {item}
-                </a>
-              </li>
-            )
-          )}
+        {/* Desktop Nav Links */}
+        <ul className="hidden md:flex gap-3 text-white font-medium text-base font-zen">
+          {navItems.map(({ label, id }) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                className="cursor-pointer text-white px-4 py-2 rounded-full transition duration-300 ease-in-out hover:bg-purple-500 hover:text-black hover:shadow-lg hover:shadow-purple-300"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        {/* Google Button */}
+        {/* Google Sign-In Button */}
         <button
-          data-aos="zoom-out-down"
           type="button"
           className="hidden md:flex items-center gap-2 text-purple-600 hover:text-white border border-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 transition duration-300"
         >
@@ -80,6 +78,8 @@ const Navbar = () => {
           </svg>
           Sign in with Google
         </button>
+
+        {/* Hamburger Menu Icon */}
         <img
           onClick={() => setShowMobileMenu(true)}
           src={assets.menu_icon}
@@ -88,18 +88,15 @@ const Navbar = () => {
         />
       </div>
 
-      {/* Mobile Menu & Overlay */}
+      {/* Mobile Menu */}
       {showMobileMenu && (
         <>
-          {/* Fullscreen Dark Overlay (closes menu on click) */}
           <div
             onClick={() => setShowMobileMenu(false)}
             className="fixed inset-0 z-40 bg-black bg-opacity-60 transition-opacity duration-300"
           />
 
-          {/* Solid Mobile Menu Panel with smooth drop animation */}
           <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-sm bg-purple-700 rounded-2xl shadow-2xl p-6 animate-slideDown">
-            {/* Close Button */}
             <div className="flex justify-end">
               <button
                 onClick={() => setShowMobileMenu(false)}
@@ -109,29 +106,24 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Navigation Links */}
             <ul className="flex flex-col items-center gap-6 mt-6 text-white font-semibold text-lg">
-              {["Home", "About", "Projects", "Testimonials", "Contact Us"].map(
-                (item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
-                    onClick={() => setShowMobileMenu(false)}
-                    className="hover:text-purple-300 transition duration-200"
-                  >
-                    {item}
-                  </a>
-                )
-              )}
+              {navItems.map(({ label, id }) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={() => setShowMobileMenu(false)}
+                  className="hover:text-purple-300 transition duration-200"
+                >
+                  {label}
+                </a>
+              ))}
             </ul>
 
-            {/* Google Sign-In Button */}
             <div className="flex justify-center mt-8">
               <button
                 type="button"
                 className="flex items-center gap-2 bg-white text-purple-700 hover:bg-purple-800 hover:text-white border border-purple-600 font-medium rounded-full text-sm px-5 py-2 transition-all duration-300"
               >
-                {/* Google Icon */}
                 <svg
                   className="w-4 h-4"
                   fill="currentColor"
