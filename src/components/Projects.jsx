@@ -17,7 +17,7 @@ const Projects = () => {
           </span>
         </h1>
         <p className="text-gray-300 mb-16 max-w-md mx-auto text-base md:text-lg">
-          Crafting Spaces, Buildings, Legacies — Explore Our Portfolio
+          Crafting Spaces, Buildings, Luxuries — Explore Our Portfolio
         </p>
 
         {/* Cards Grid */}
